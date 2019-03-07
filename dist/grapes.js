@@ -34530,8 +34530,9 @@ module.exports = Backbone.Collection.extend({
           models[index] = _this.parseString(item);
         }
       });
-    } else if ((0, _underscore.isObject)(models) && models.content) {
-      return this.add(models.content);
+    } else if ((0, _underscore.isObject)(models) && (0, _underscore.isString)(models.content)) {
+      var parsed = this.parseString(models.content, opt);
+      models = _extends({}, models, parsed);
     }
 
     return Backbone.Collection.prototype.add.apply(this, [models, opt]);
@@ -38762,7 +38763,7 @@ module.exports = function () {
     plugins: plugins,
 
     // Will be replaced on build
-    version: '0.14.57',
+    version: '0.14.58',
 
     /**
      * Initialize the editor with passed options
