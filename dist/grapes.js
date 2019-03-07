@@ -34531,7 +34531,7 @@ module.exports = Backbone.Collection.extend({
         }
       });
     } else if ((0, _underscore.isObject)(models) && models.content) {
-      this.add(models.content);
+      return this.add(models.content);
     }
 
     return Backbone.Collection.prototype.add.apply(this, [models, opt]);
@@ -38762,7 +38762,7 @@ module.exports = function () {
     plugins: plugins,
 
     // Will be replaced on build
-    version: '0.14.55',
+    version: '0.14.56',
 
     /**
      * Initialize the editor with passed options
